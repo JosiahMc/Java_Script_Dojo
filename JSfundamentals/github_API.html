@@ -1,0 +1,28 @@
+
+<html>
+<head>
+    <title>Git Hub Dev</title>
+    <link rel="stylesheet" type="text/css" >
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+        $('#name').click(function(){
+
+            $.get("https://api.github.com/users/josiahmc", displayLogin)
+                function displayLogin(data) {
+                console.log(data.login);
+                $('#login').text(data.login)
+}
+            })
+        })
+</script>
+</head>
+<body>
+    <button id="name" >Button</button>
+
+    <div id="login">
+        
+    </div>
+
+</body>
+</html>

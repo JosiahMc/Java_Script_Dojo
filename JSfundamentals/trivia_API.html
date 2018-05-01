@@ -1,0 +1,40 @@
+
+<html>
+        <head>
+            <title>Trivia</title>
+            <link rel="stylesheet" type="text/css" >
+            <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                // $('#results').click(function(){
+                    let triv_results;
+                    $.get("https://opentdb.com/api.php?amount=10", displayTrivia)
+                        function displayTrivia(data) {
+                            console.log(data['results']);
+                            // triv_results = data.results[0];
+                            console.log(triv_results)
+                            // loop through all categories
+                            for (let i = 0; i < data.results.length; i++) {
+                        $('#data').append("<div class='container'>" + "<h1>" + data.results[i].category + "</h1>" + "<br>" +  "</div>") 
+                            }
+                        }   
+                    // })
+                })
+        </script>
+        <style> 
+        .container
+        {
+            background: yellow;
+        }
+        </style>
+        </head>
+        <body>
+            <button id="results">Button</button>
+        
+            <div id="data">
+
+              
+            </div>
+        
+        </body>
+        </html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather API</title>
+    <link rel="stylesheet" type="text/css" href="weatherapi.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function()
+        
+        
+        
+        {
+        $('.find').click(function(){
+            $.get("https://api.github.com/users/" + displayName)
+
+function displayName(data) {
+  console.log(data);
+}
+
+
+
+            // console.log('num')
+
+
+            return false;
+        })        
+})
+</script>
+</head>
+<body>
+    <form>
+    <input type="text" class="name">
+    <input type="submit" class="find" value="Find!">
+    </form>
+    <div class="name">
+        
+    </div>
+
+</body>
+</html>
