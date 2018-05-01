@@ -1,4 +1,3 @@
-
 <html>
         <head>
             <title>Trivia</title>
@@ -6,7 +5,9 @@
             <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
             <script type="text/javascript">
                 $(document).ready(function(){
-                // $('#results').click(function(){
+
+
+
                     let triv_results;
                     $.get("https://opentdb.com/api.php?amount=10", displayTrivia)
                         function displayTrivia(data) {
@@ -15,16 +16,37 @@
                             console.log(triv_results)
                             // loop through all categories
                             for (let i = 0; i < data.results.length; i++) {
-                        $('#data').append("<div class='container'>" + "<h1>" + data.results[i].category + "</h1>" + "<br>" +  "</div>") 
+                                var difficulty_level = 0;
+                                console.log(data.results[i].difficulty)
+                            if (data.results[i].difficulty == 'easy'){
+                                difficulty_level = 100;
                             }
-                        }   
-                    // })
+                            if (data.results[i].difficulty == 'medium'){
+                                difficulty_level = 200;
+                            }
+                            if (data.results[i].difficulty == 'hard') {
+                                difficulty_level = 300; }
+                        $('#data').append("<div class='container' id=="+i+">" + "<h4>" + 
+                            data.results[i].category + "</h4>" + "<br>"  + "<p>" + 
+                            difficulty_level + "</p>" +  "<p>" + data.results[i].question + "</p>" + "</div>")
+                            }
+                        }
+                        $('#id').click(function(){
+                            $('question').hide();
+                        })
+
                 })
         </script>
-        <style> 
+        <style>
         .container
         {
             background: yellow;
+            display: inline-block;
+            margin: 10px;
+            height: 300px;
+            padding: 5px;
+            width: 300px;
+            text-align: center;
         }
         </style>
         </head>
@@ -32,7 +54,7 @@
             <button id="results">Button</button>
         
             <div id="data">
-
+                    <!-- <button type="submit"></button> -->
               
             </div>
         
