@@ -42,7 +42,7 @@ class Sensie extends Ninja
     speakWisdom() 
     {
         const message = super.drinkSake();
-        console.log("I'm a cool fucking dude ass Sensie")
+        console.log("I'm a cool")
         return this
     }
 }
