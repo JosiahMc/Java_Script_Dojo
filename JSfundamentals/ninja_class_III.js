@@ -14,7 +14,12 @@ class Ninja
          
         }
         
-       
+        drinkSake() 
+        {
+            this.health = this.health + 10;
+            console.log(`Now I'm feeling good and my health is currently:  ${this.health}`);
+            return this;
+        }
        
        
         kick(potato) 
@@ -26,8 +31,32 @@ class Ninja
 
 }
 
-const redNinja = new Ninja("Chiggga my Ninja")
+class Sensie extends Ninja  
+    {
+        
+            constructor(name, health=200, speed=10, strength=10, wisdom=10)
+        {
+            super(name, health=200, speed=10, strength=10)
+            this.wisdom = wisdom;
+        }
+    speakWisdom() 
+    {
+        const message = super.drinkSake();
+        console.log("I'm a cool fucking dude ass Sensie")
+        return this
+    }
+}
+
+
+const redNinja = new Ninja("Jimmy John")
 const blueNinja = new Ninja("Dave McGee")
-redNinja.kick(blueNinja).kick(blueNinja)
-redNinja.display()
-blueNinja.display()
+// redNinja.kick(blueNinja).kick(blueNinja)
+// redNinja.display()
+// blueNinja.display()
+// redNinja.drinkSake()
+const coolSensie = new Sensie("Joe Smoe")
+
+console.log(Sensie);
+coolSensie.display()
+coolSensie.drinkSake()
+coolSensie.speakWisdom().speakWisdom().speakWisdom().speakWisdom()
