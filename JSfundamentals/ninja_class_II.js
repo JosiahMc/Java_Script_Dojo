@@ -57,4 +57,7 @@ console.log("*************************************")
 redNinja.kick(blueNinja).kick(blueNinja)
 
 
+console.log("There has to be");
+
+
 

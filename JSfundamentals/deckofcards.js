@@ -70,7 +70,13 @@ let bob = new Deck ();
 console.log(bob);
 
 
+
+console.log(bob.cards.length == 52)
 bob.shuffles(100);
 bob.shuffle();
+
+
+console.log(bob.cards.length == 51)
+
 
 // for of loops 
