@@ -47,6 +47,27 @@ app.post('/registration', function(req,res){
     });
 });
 
+app.post('/login', function(req,res){
+    User.find({}, function(err, users){
+        if(err){
+            console.log("User not found");
+        }
+        else{
+            console.log(req.body)
+            for (var i =0; i< users.length; i++) {
+                if(req.body.email==users[i].email){
+                    console.log("user found")
+                }
+            }
+                
+
+            
+            
+            
+        }
+    });
+ });
+
 app.listen(8000, function() {
     console.log("listening on port 8000 Ryan Secrest where you at homie homes");
 });
