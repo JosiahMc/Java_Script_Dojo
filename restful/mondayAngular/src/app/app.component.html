@@ -1,0 +1,56 @@
+
+
+<style>
+.itemDiv {
+  background: red;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+  margin: 15px;
+
+}
+
+.landing {
+  background: purple;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+  margin: 15px;
+}
+
+</style>
+<div class="itemDiv" *ngFor="let items of tasks">
+
+  <ul>
+    <li>{{ items.title }}</li>
+    <li>{{ items.description }}</li>
+    <li>{{ items.completed }}</li>
+    <li><button (click)="btnDeleteTasks(items._id)">Delete</button><button>Deets</button><button>Prove El Routoooh</button></li>
+    
+  </ul>
+  
+</div>
+
+<button (click)="btnGetTasks()">Sup dude clicketh me</button>
+
+<div class="landing">
+<ul>
+  <li>Title:</li>
+  <li>Description</li>
+  <li>Completed</li>
+  <li>ID:</li>
+</ul>
+
+
+</div>
+
+<form (submit)="postAddTasks()">
+    {{newtask.title}}{{newtask.description}}<br>
+  <input name="newtask.title" type="text" placeholder="title" [(ngModel)]="newtask.title">
+  <input name="newtask.description" type="text" placeholder="description" [(ngModel)]="newtask.description">
+  <input type="submit">
+</form>
+
+

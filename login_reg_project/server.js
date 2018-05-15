@@ -52,9 +52,9 @@ app.post('/login', function(req,res){
         if(err){
             console.log("User not found");
         }
-        else{
+        else{   
             console.log(req.body)
-            for (var i =0; i< users.length; i++) {
+            for (var i =0; i< users.length; i++)   {
                 if(req.body.email==users[i].email){
                     console.log("user found")
                 }
@@ -65,6 +65,8 @@ app.post('/login', function(req,res){
             
             
         }
+        console.log("Line before redirecting to login")
+        res.redirect("")
     });
  });
 
